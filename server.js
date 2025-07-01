@@ -1,22 +1,3 @@
-import express from 'express';
-import { createServer } from 'http';
-import { Server } from 'socket.io';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const app = express();
-const httpServer = createServer(app);
-const io = new Server(httpServer);
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
-
-const PORT = process.env.PORT || 3000;
-
 
 
 
